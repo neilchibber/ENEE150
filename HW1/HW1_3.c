@@ -2,14 +2,21 @@
 
 int main() {
 
-    char *digits[] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+    char *digits[10] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
     int num;
     printf("Enter a number: ");
     scanf("%d", &num);
 
-     while (num > 0) {
+    void printDigits(int num) {
+        if (num == 0) {
+            return;
+        }
+
+        printDigits(num / 10);
         printf("%s ", digits[num % 10]);
-        num = num / 10;
     }
+
+    printDigits(num);
+
 return 0;
 }
