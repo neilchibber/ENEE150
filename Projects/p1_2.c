@@ -4,12 +4,14 @@
 #define MAX_SIZE 10
 #define MAX_MATRICES 100
 
+//this struct lets me easily define how many col/row a matrix has
 typedef struct {
     int rows;
     int cols;
     int data[MAX_SIZE][MAX_SIZE];
 } Matrix;
 
+//function inits
 void printMatrix(Matrix m, int index, FILE *fp);
 void printMenu();
 int getMatrixIndex(int k, char *prompt);
@@ -33,19 +35,21 @@ void findMaximum(Matrix A, FILE *fp);
 
 int main(int argc, char *argv[])
 {
-
+    //get number of matrices from command line
     int k = atoi(argv[1]);
     if (k <= 0) {
         printf("Invalid number of matrices.\n");
         return 1;
     }
 
+    //open input file for reading
     FILE *input = fopen(argv[2], "r");
     if (input == NULL) {
         printf("Error opening input file.\n");
         return 1;
     }
 
+    //open output file for writing
     FILE *output = fopen(argv[3], "w");
     if (output == NULL) {
         printf("Error opening output file.\n");
@@ -55,6 +59,7 @@ int main(int argc, char *argv[])
 
     Matrix M[MAX_MATRICES];
 
+    //load each matrix from file
     for (int m = 0; m < k; m++) {
 
         fscanf(input, "%d %d", &M[m].rows, &M[m].cols);
@@ -68,19 +73,21 @@ int main(int argc, char *argv[])
 
     fclose(input);
 
+    //print initial matrices to console and file
     for (int i = 0; i < k; i++) {
         printMatrix(M[i], i, output);
     }
 
     int choice;
 
+    //main program loop
     while (1) {
 
         printMenu();
         scanf("%d", &choice);
 
         if (choice == 1) {
-
+            //addition logic
             int idx1 = getMatrixIndex(k, "Select the first matrix: ");
             if (idx1 == -1) continue;
 
@@ -91,7 +98,7 @@ int main(int argc, char *argv[])
         }
 
         else if (choice == 2) {
-
+            //subtraction logic
             int idx1 = getMatrixIndex(k, "Select the first matrix: ");
             if (idx1 == -1) continue;
 
@@ -102,7 +109,7 @@ int main(int argc, char *argv[])
         }
 
         else if (choice == 3) {
-
+            //multiplication logic
             int idx1 = getMatrixIndex(k, "Select the first matrix: ");
             if (idx1 == -1) continue;
 
@@ -113,7 +120,7 @@ int main(int argc, char *argv[])
         }
 
         else if (choice == 4) {
-
+            //transpose logic
             int idx = getMatrixIndex(k, "Select matrix: ");
             if (idx == -1) continue;
 
@@ -121,7 +128,7 @@ int main(int argc, char *argv[])
         }
 
         else if (choice == 5) {
-
+            //reverse logic
             int idx = getMatrixIndex(k, "Select matrix: ");
             if (idx == -1) continue;
 
@@ -129,7 +136,7 @@ int main(int argc, char *argv[])
         }
 
         else if (choice == 6) {
-
+            //scalar multiplication logic
             int idx = getMatrixIndex(k, "Select matrix: ");
             if (idx == -1) continue;
 
@@ -141,7 +148,7 @@ int main(int argc, char *argv[])
         }
 
         else if (choice == 7) {
-
+            //determinant logic
             int idx = getMatrixIndex(k, "Select matrix: ");
             if (idx == -1) continue;
 
@@ -149,7 +156,7 @@ int main(int argc, char *argv[])
         }
 
         else if (choice == 8) {
-
+            //find max logic
             int idx = getMatrixIndex(k, "Select matrix: ");
             if (idx == -1) continue;
 
@@ -157,7 +164,7 @@ int main(int argc, char *argv[])
         }
 
         else if (choice == 9) {
-
+            //exit program
             printf("Exit.\n");
             fprintf(output, "Exit.\n");
             break;
@@ -173,7 +180,7 @@ int main(int argc, char *argv[])
 }
 
 
-
+//prints matrix to both screen and file
 void printMatrix(Matrix m, int index, FILE *fp)
 {
     printf("M[%d]:\n", index);
@@ -198,7 +205,7 @@ void printMatrix(Matrix m, int index, FILE *fp)
 }
 
 
-
+//shows menu options
 void printMenu()
 {
     printf("\n");
@@ -215,7 +222,7 @@ void printMenu()
 }
 
 
-
+//gets valid matrix index from user with 3 retries
 int getMatrixIndex(int k, char *prompt)
 {
     int index;
@@ -239,7 +246,7 @@ int getMatrixIndex(int k, char *prompt)
 }
 
 
-
+//adds two matrices if dimensions match
 void addMatrices(Matrix A, Matrix B, FILE *fp)
 {
     if (A.rows != B.rows || A.cols != B.cols) {
@@ -267,7 +274,7 @@ void addMatrices(Matrix A, Matrix B, FILE *fp)
 }
 
 
-
+//subtracts two matrices if dimensions match
 void subtractMatrices(Matrix A, Matrix B, FILE *fp)
 {
     if (A.rows != B.rows || A.cols != B.cols) {
@@ -292,7 +299,7 @@ void subtractMatrices(Matrix A, Matrix B, FILE *fp)
 }
 
 
-
+//multiplies two matrices using dot product
 void multiplyMatrices(Matrix A, Matrix B, FILE *fp)
 {
     if (A.cols != B.rows) {
@@ -324,13 +331,15 @@ void multiplyMatrices(Matrix A, Matrix B, FILE *fp)
 }
 
 
-
+//helper function to swap rows and cols recursively
 void transposeRecursive(Matrix A, Matrix *T, int i, int j)
 {
+    //stop if we reach end of rows
     if (i == A.rows) return;
 
     T->data[j][i] = A.data[i][j];
 
+    //move to next column or reset to next row
     if (j + 1 < A.cols)
         transposeRecursive(A, T, i, j + 1);
     else
@@ -338,7 +347,7 @@ void transposeRecursive(Matrix A, Matrix *T, int i, int j)
 }
 
 
-
+//wraps the recursive transpose function
 void transposeMatrix(Matrix A, FILE *fp)
 {
     Matrix T;
@@ -354,12 +363,13 @@ void transposeMatrix(Matrix A, FILE *fp)
 }
 
 
-
+//reverses all elements in the matrix
 void reverseMatrix(Matrix A, FILE *fp)
 {
     int temp[MAX_SIZE * MAX_SIZE];
     int index = 0;
 
+    //copy elements into flat array
     for (int i = 0; i < A.rows; i++)
         for (int j = 0; j < A.cols; j++)
             temp[index++] = A.data[i][j];
@@ -368,6 +378,7 @@ void reverseMatrix(Matrix A, FILE *fp)
 
     Matrix R = A;
 
+    //copy elements back in reverse order
     for (int i = 0; i < A.rows; i++)
         for (int j = 0; j < A.cols; j++)
             R.data[i][j] = temp[index--];
@@ -379,7 +390,7 @@ void reverseMatrix(Matrix A, FILE *fp)
 }
 
 
-
+//multiplies every element by a single value
 void scalarMultiply(Matrix A, int scalar, FILE *fp)
 {
     Matrix R = A;
@@ -395,15 +406,17 @@ void scalarMultiply(Matrix A, int scalar, FILE *fp)
 }
 
 
-
+//calculates determinant using laplace expansion
 int determinantRecursive(Matrix A, int n)
 {
+    //base case for 1x1
     if (n == 1)
         return A.data[0][0];
 
     int det = 0;
     Matrix sub;
 
+    //loop through columns to find minors
     for (int x = 0; x < n; x++) {
 
         int subi = 0;
@@ -413,7 +426,7 @@ int determinantRecursive(Matrix A, int n)
             int subj = 0;
 
             for (int j = 0; j < n; j++) {
-
+                //skip current column to form submatrix
                 if (j == x) continue;
 
                 sub.data[subi][subj++] = A.data[i][j];
@@ -422,8 +435,8 @@ int determinantRecursive(Matrix A, int n)
             subi++;
         }
 
+        //apply cofactor sign and recurse
         int sign = (x % 2 == 0) ? 1 : -1;
-
         det += sign * A.data[0][x] * determinantRecursive(sub, n - 1);
     }
 
@@ -431,7 +444,7 @@ int determinantRecursive(Matrix A, int n)
 }
 
 
-
+//wraps recursive determinant with error checking
 void determinantMatrix(Matrix A, FILE *fp)
 {
     if (A.rows != A.cols) {
@@ -448,15 +461,18 @@ void determinantMatrix(Matrix A, FILE *fp)
 }
 
 
-
+//traverses matrix recursively to find largest value
 int findMaxRecursive(Matrix A, int i, int j, int currentMax)
 {
+    //stop at end of matrix
     if (i == A.rows)
         return currentMax;
 
+    //update max if current element is larger
     if (A.data[i][j] > currentMax)
         currentMax = A.data[i][j];
 
+    //move to next column or next row
     if (j + 1 < A.cols)
         return findMaxRecursive(A, i, j + 1, currentMax);
     else
@@ -464,7 +480,7 @@ int findMaxRecursive(Matrix A, int i, int j, int currentMax)
 }
 
 
-
+//wraps recursive max search
 void findMaximum(Matrix A, FILE *fp)
 {
     int max = findMaxRecursive(A, 0, 0, A.data[0][0]);
