@@ -1,0 +1,22 @@
+Files in this directory:
+Q_and_A.txt:	this file. Q&A on the project, latest one on top.
+in1.txt:	the sample input file used in the project description.
+out1.txt:	a sample output file for phase 1
+out1B.txt:	the same sample output file with Bonus features
+out1B[12].txt:	same output with only Bonus feature 1 or 2
+*************************************************************************
+Thu Feb 26 13:25:24 EST 2026
+Q2. What needs to be put into the output file?
+A.  In the (latest version of) the project description, it states
+For each operation, you first print the name of the operation, the 
+operand(s) and then the result of the operation. 
+    Read the sample output files for more details.
+
+Thu Feb 26 12:53:47 EST 2026
+Q1. out1B.txt has both Bonus features. Can you post the output file with
+	each of the Bonus feature separately?
+A. Done. See out1B1.txt and out1B2.txt.
+   When we grade the project, we will not do a file difference like the way
+	HW1 was graded. Instead, most likely we will check the output file(s)
+	visually to see whether these Bonus features are implemented correctly.
+  

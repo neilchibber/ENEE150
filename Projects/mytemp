@@ -1,0 +1,47 @@
+M[0]
+1 2 3
+4 5 6
+M[1]
+1 2
+3 4
+5 6
+M[2]
+2 1 0
+0 3 101
+4 -1 2
+M[3]
+-1 -2 -3
+-4 -5 -6
+M[4]
+105 -2 1415
+3 608 -37
+M[5]
+12 89 8 3333 909 -34 -56 99 0 67
+-4012 9 -8 33 573 101 -777 9 1067 5
+-56 99 0 67 12 89 8 3333 909 -34
+3333 909 -34 -56 99 0 67 0 3 101
+2 30189 3333 -1909 54 836 99 0 67 240
+-12 -89 -8 -573 -101 777 34 56 30 7
+-1909 54 836 12 89 8 909 -56 374 67
+1 8 8 33 90 -4 -56 49 20 7
+312 206 57 180 -98 43 -34 -56 99 782
+457 -189 8 871 -1016 734 -613 395 37 644
+
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Transpose
+5. Reverse
+6. Scalar Multiplication
+7. Find Determinant
+8. Find the Maximum Value
+9. Exit
+
+Addition: M[0] + M[1]
+The two matrices have mismatched size. Operation abandonned.
+
+Addition: M[0] + M[3]
+0 0 0
+0 0 0
+
+Good-bye!

@@ -1,0 +1,35 @@
+M[0]
+1 2 3
+4 5 6
+M[1]
+1 2
+3 4
+5 6
+M[2]
+2 1 0
+0 3 101
+4 -1 2
+
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Transpose
+5. Reverse
+6. Scalar Multiplication
+7. Find Determinant
+8. Find the Maximum Value
+9. Exit
+
+Addition: M[1] + M[0]
+The two matrices have mismatched size. Operation abandonned. 
+
+Addition: M[0] + M[0]
+2 4 6
+8 10 12
+
+Addition: M[2] + M[2]
+4 2 0
+0 6 202
+8 -2 4
+
+Good-bye!

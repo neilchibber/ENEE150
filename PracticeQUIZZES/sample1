@@ -1,0 +1,29 @@
+/*Convert the following method into a non recursive method, and include 
+ * a comment in plain English explaining what it does*/
+#include <stdio.h>
+
+/* This function calculates and returns the sum of all even numbers 
+   in the array arr. It iterates through the array from index y to x-1,
+   checking if each element is even (mod 2 == 0), and adds even 
+   elements to a running sum which is then returned. */
+
+int foo(int arr[], int x, int y, int z)
+{
+    int sum = z; //base case
+    for (int i = y; i < x; i++)
+    {
+        if (arr[i] % 2 == 0)
+        {
+            sum += arr[i];
+        }
+    }
+    return sum;
+}
+
+
+
+int main(void){
+	int testArr[] = {1, 2, 3, 4, 5, 6};
+	printf("%d\n",foo(testArr, 6, 0, 0));
+
+}

@@ -1,0 +1,58 @@
+/* Convert the following code using recursion,
+and describe in plain English what the function
+does using a comment. */
+
+#include <stdio.h>
+
+int foo(int A[], int x, int n);
+
+int main() {
+  int A[] = { 2, 3, -7, 10, -20, 5 };
+  printf("foo(): \n");
+  printf("%d\n", foo(A, 0, 1));
+  printf("%d\n", foo(A, 1, 3));
+  printf("%d\n", foo(A, 2, 5));
+}
+
+/* This function counts and returns the number of even numbers 
+   in array A from index x to index n (inclusive). It uses recursion
+   to traverse through the array, adding 1 for each even element found. */
+
+int foo(int A[], int x, int n) {
+  if (x > n) {
+    return 0;
+  }
+  return (A[x] % 2 == 0) + foo(A, x + 1, n);
+}
+
+
+
+//og
+
+/* Convert the following code using recursion,
+and describe in plain English what the function
+does using a comment. */
+
+#include <stdio.h>
+
+int foo(int A[], int x, int n);
+
+int main() {
+  int A[] = { 2, 3, -7, 10, -20, 5 };
+  printf("foo(): \n");
+  printf("%d\n", foo(A, 0, 1));
+  printf("%d\n", foo(A, 1, 3));
+  printf("%d\n", foo(A, 2, 5));
+}
+
+int foo(int A[], int x, int n) {
+  int res = 0;
+  while (x <= n) { //this beomcomes base case (if x > n, return 0)
+    if (A[x] % 2 == 0) {
+      res++;
+    }
+    x++;
+  }
+  return res;
+}
+
