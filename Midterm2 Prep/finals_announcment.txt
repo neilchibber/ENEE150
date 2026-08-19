@@ -1,0 +1,7 @@
+Topics and types of questions in the final exam: 
+
+    Graph: two representation methods, BFS, DFS, topological order, Dijkstra's algorithm. (problems will be similar to those in homework 6 and quiz 4. No pseudocode writing or analysis).
+    Doubly linked list: basic concepts, three key operations: search, insert, delete. (short code analysis problems, no coding problem).
+    Singly linked list: the simply structure used in Homework 5. (questions will be similar to Homework 5, quiz 3, and midterm 2. Coding and/or code analysis).
+    Pointers and dynamic memory allocations: basic concepts, special pointers and constants. (questions with short answers).
+    Project related questions: both projects will be covered with more weight on project 2. (questions with short answers, coding and code analysis).

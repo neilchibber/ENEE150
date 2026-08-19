@@ -1,0 +1,97 @@
+
+Reading entry from 0x9a52e0 ... 
+5 entries stored in matrix at 0x9a5520.
+
+matrix at 0x9a5520 ...
+    1 (2,2)     8 (2,4)     7 (1,3)     5 (2,3)     6 (1,5) 
+
+Reading entry from 0x9a52e0 ... 
+6 entries stored in matrix at 0x9a5970.
+
+matrix at 0x9a5970 ...
+    1 (2,2)     8 (2,3)     7 (2,1)     6 (3,2)     7 (3,1) 
+    9 (3,3) 
+
+Reading entry from 0x9a52e0 ... 
+7 entries stored in matrix at 0x9a5de0.
+
+matrix at 0x9a5de0 ...
+    1 (4,2)     8 (4,3)     7 (3,1)     5 (2,3)     6 (3,2) 
+    9 (1,2)     7 (1,1) 
+
+Transposing matrix 0x9a5970 ...
+
+matrix at 0x9a5970 ...
+    1 (2,2)     8 (2,3)     7 (2,1)     6 (3,2)     7 (3,1) 
+    9 (3,3) 
+
+matrix at 0x9a52e0 ...
+    7 (1,2)     7 (1,3)     1 (2,2)     6 (2,3)     8 (3,2) 
+    9 (3,3) 
+
+Reversing matrix 0x9a5970 ...
+
+matrix at 0x9a6590 ...
+    9 (2,1)     6 (2,2)     7 (2,3)     8 (3,1)     1 (3,2) 
+    7 (3,3) 
+
+Multiplying 0x9a5520 with 0x9a5970 ...
+
+matrix at 0x9a6a00 has 6 non-zero entries.
+
+matrix at 0x9a6a00 ...
+   49 (1,1)    42 (1,2)    63 (1,3)    42 (2,1)    31 (2,2) 
+   53 (2,3) 
+
+Multiplying 0x9a52e0 with 0x9a6590 ...
+
+matrix at 0x9a6c00 has 9 non-zero entries.
+
+matrix at 0x9a6c00 ...
+  119 (1,1)    49 (1,2)    98 (1,3)    57 (2,1)    12 (2,2) 
+   49 (2,3)   144 (3,1)    57 (3,2)   119 (3,3) 
+
+Finding path from (2, 2) to (2, 1) ...
+1 (2,2)
+7 (2,1)
+
+Transposing matrix 0x9a5de0 ...
+
+matrix at 0x9a5de0 ...
+    1 (4,2)     8 (4,3)     7 (3,1)     5 (2,3)     6 (3,2) 
+    9 (1,2)     7 (1,1) 
+
+matrix at 0x9a6ef0 ...
+    7 (1,1)     7 (1,3)     9 (2,1)     6 (2,3)     1 (2,4) 
+    5 (3,2)     8 (3,4) 
+
+Reversing matrix 0x9a5de0 ...
+
+matrix at 0x9a7470 ...
+    8 (1,1)     1 (1,2)     6 (2,3)     7 (3,1)     5 (3,2) 
+    9 (4,2)     7 (4,3) 
+
+Multiplying 0x9a5970 with 0x9a5de0 ...
+
+matrix at 0x9a79f0 has 6 non-zero entries.
+
+matrix at 0x9a79f0 ...
+  105 (2,1)   111 (2,2)     5 (2,3)   112 (3,1)   117 (3,2) 
+   30 (3,3) 
+
+Multiplying 0x9a6ef0 with 0x9a7470 ...
+
+matrix at 0x9a7bf0 has 7 non-zero entries.
+
+matrix at 0x9a7bf0 ...
+  105 (1,1)    42 (1,2)   114 (2,1)    48 (2,2)     7 (2,3) 
+   72 (3,2)    86 (3,3) 
+
+Finding path from (4, 2) to (3, 1) ...
+1 (4,2)
+6 (3,2)
+7 (3,1)
+
+
+Finding path from (1, 1) to (3, 3) ...
+No path found. Entry (3, 3) has value 0.

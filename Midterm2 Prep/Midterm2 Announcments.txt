@@ -1,0 +1,26 @@
+4. Midterm 2: next Thursday (April 30). It covers everything before the slides on Graph (08_graphs) with emphasis on the materials after midterm 1 (that is: linked list, pointers, and dynamic memory allocation). The types of the questions will be similar to homework 4&5 and those in midterm I. Here is the list of the main topics:  
+
+    use of pointers (pointer type of variables, dynamic memory allocation, functions with pointers)
+    linked list concepts (definition, search, insert, delete) 
+    The structures in the linked list will be from project 2, homework 5, lecture notes, and sample codes in the public directory.  
+    There will be questions on both coding and code analysis (similar to the last question in Midterm 1). 
+
+Midterm 2 in the past semesters will NOT be posted as they were heavily dependent on the projects which were different from our project 2. In addition to lecture notes and sample codes in the public directory, working on all the problems posted in homework 5 and project 2 will be a good way to get you prepared for Midterm 2. 
+
+
+
+
+he exam cover page
+is posted in the Single Files folder. 
+
+Here are the types of the problems: pointer basics; code writing and analysis based on the structures of project 2 (no need to use left/right/up/down/info pointers);  coding and debugging with singly linked list (the structures in homework 5). The space left on the exam paper should be sufficient to write down your answers. 
+
+Please come to class on time and we must collect all the exam papers by 12:15 pm.  
+
+
+Midterm 2: next Thursday (April 30). It covers everything before the slides on Graph (08_graphs) with emphasis on the materials after midterm 1 (that is: linked list, pointers, and dynamic memory allocation). The types of the questions will be similar to homework 4&5 and those in midterm I. Here is the list of the main topics:  
+
+    use of pointers (pointer type of variables, dynamic memory allocation, functions with pointers)
+    linked list concepts (definition, search, insert, delete) 
+    The structures in the linked list will be from project 2, homework 5, lecture notes, and sample codes in the public directory.  
+    There will be questions on both coding and code analysis (similar to the last question in Midterm 1). 

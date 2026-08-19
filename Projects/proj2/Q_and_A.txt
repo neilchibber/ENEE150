@@ -1,0 +1,65 @@
+sparse.h:	header file
+p2_2.c:		main() for project 2 phase 2
+****** 	These two files will be used for gradeing purpose. 
+	Please read both carefully.
+
+a.out:		
+d234.txt:	output file when running 
+    a.out ../DATA/s_in_2.txt ../DATA/s_in_3.txt ../DATA/s_in_4.txt d234.txt
+		values for the positions: 1 1 3 3
+
+    a.out s_in_1.txt a1.txt	(input: 1 7 1 8)
+    a.out l_in_3.txt a7.txt 	(input: 13 14 83 29)
+    a.out l_in_4.txt a8.txt 	(input: 81 5 3 387)
+********************************************************************************
+Sat May  2 18:39:22 EDT 2026
+Q5. Can you post more sample output files?
+A2. A couple more (a1.txt, a7.txt, and a8.txt) are posted. See above on how they
+	are generated. Indeed, you can run the a.out on input files in ../DATA/
+	directory to generate as many sample output files as you want. 
+
+
+Sat May  2 18:29:19 EDT 2026
+Q4. Will there be any test cases on the large input files?
+A4. Yes. There will be. Also for large graph, the path between two entries may
+	not be uniques. So your answer does not need to be exactly the same as
+	that in the sample output file.
+
+
+Sat May  2 10:43:55 EDT 2026
+Q3. Do I have to use the "new structure" described in the slides for project 2?
+A3. You do not have to. But as we have discussed in the class, using such structure
+	can (significantly) help in implementing (some) functions for phase 2 of the 
+	project. 
+    You can also define your own structures. If you do that, they have to be 
+	defined and used in your sparse_2.c (remember that you cannot change p2_2.c
+	and sparse.h). 
+
+
+Sat May  2 10:33:27 EDT 2026
+Q2. How to run the a.out you posted here?
+A2. 	copy a.out to your own directory for project 2
+	assume that the input files are in the same directory
+    a.out s_in_2.txt s_in_3.txt s_in_4.txt d234.txt
+	if the input files are in another directory, say in subdirectory DATA/
+	   (and the subdirectory DATA/ is in the same difectory of a.out), then
+    a.out DATA/s_in_2.txt DATA/s_in_3.txt DATA/s_in_4.txt d234.txt
+
+
+Sat May  2 08:37:59 EDT 2026
+Q1. in d234.txt, the transpose matrix is printed out in the order as the original
+	matrix, but the reverse matrix is printed out in the normal matrix order
+	(by each row and by the column in the same row). Is there a reason for 
+	this? Can I print out both in the matrix oder? 
+A1.
+   Good catch! It happend that way because in our sample code, the next pointer
+	for each matrix ENTRY was not used in building transpose, but was used
+	in building reverse. Both matrices were printed out by show_list(), which
+	uses the next pointer, so they appear in different order. 
+   I have moved the old output to d234.bak and generate the new d234.txt output
+	where both matrices are printed out in the "matrix order".
+   Indeed, we should have required the matrix to be printed out in "matrix order".
+	But for the grading purpose, it is ok if you print it out in a different
+	order as long as the matrix entry information (val, row, col) is correct.
+
+ 

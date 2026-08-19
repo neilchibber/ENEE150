@@ -1,0 +1,11 @@
+
+Reading entry from 0x158b2d0 ... 
+4 entries stored in matrix at 0x158b510.
+
+matrix at 0x158b510 ...
+    1 (1,8)     8 (1,6)     7 (1,4)     1 (1,7) 
+
+
+Finding path from (1, 7) to (1, 8) ...
+1 (1,7)
+1 (1,8)

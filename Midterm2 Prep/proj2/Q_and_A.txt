@@ -1,0 +1,68 @@
+Files under this directory:
+s_in_[1-5].txt: 5 small input (sparse) matrices with 4-10 non-zero entries
+l_in_1.txt:     a large sparse matrix with 300 non-zero entries
+sparse.h:       a sample header file
+sparse.c:       a sample file that you can use to build your project
+p2_1.c:         a sample p2_1.c
+
+sparse.o:       the object file obtained by the following command 
+        gcc -c sparse.c -o sparse.o
+a.out:        	the executable obtained by the following command
+        gcc p2_1.c sparse.o
+
+t[1-5].txt:     output files for the following commands:
+        a.out s_in_1.txt t1.out
+        a.out s_in_1.txt s_in_2.txt t2.txt
+        a.out s_in_1.txt s_in_2.txt s_in_3.txt t3.txt
+        a.out s_in_1.txt s_in_2.txt s_in_3.txt s_in_4.txt t4.txt
+        a.out s_in_1.txt s_in_2.txt s_in_3.txt s_in_4.txt s_in_5.txt t5.txt
+
+**********************************************************************************
+Fri Apr 17 06:44:07 EDT 2026
+Q. What is file junk3?
+A. This is the output file with 3 sparse matrices as input. It is obtained by
+	the command
+   run.out ../s_in_1.txt ../s_in_2.txt ../s_in_3.txt junk3
+	where .. in front of the input files is needed because these files are
+	not in the same directory of run.out
+
+Fri Apr 17 06:32:22 EDT 2026
+Q. in the spec of addition(), you said 
+	//matrix at 0x1887040 has k non-zero entries
+                // where 0x1887040 is the address where the first ENTRY of
+                // the sum M1+M2 is stored
+   but 0x1887040 is the value of the ROOT pointer for the sum, not the first
+	ENTRY in the sum matrix.
+A. You are correct. The comment has been rephrased to 
+                // where 0x1887040 is the address where the ROOT of the sum
+                // M1+M2 is stored 
+		
+Fri Apr 17 06:13:09 EDT 2026
+Q. sparse.h says that when the addition method is called it should print out the 
+	values of M1 + M2.  However in the p2_1.c file, after the addition method, 
+	show_list() is called to print out the sum. So values of the sum will be 
+	printed out twice, is that correct?
+A. Good point. It is redundant to print out the values twice. I am removing the 
+	requirement of "printing it insider function addition()". 
+   If you have already implemented it, you will not lose points if you print out
+	the values of sum correctly twice. 
+
+
+Tue Apr 14 17:24:14 EDT 2026
+sparse.h, sparse.c, and p2_1.c are posted in WORK/ directory. 
+Your task is to implement the three functions at the bottom of sparse.c. These 
+	functions are defined with detailed specification in sparse.h. They are
+	called from p2_1.c. 
+NOTE: You cannot modify sparse.h and p2_1.c. Keep all your work in sparse.c. After you
+	complete Phase 1, rename sparse.c to sparse_1.c and submit it as described in
+	the project description.
+
+
+Mon Apr 13 12:43:45 EDT 2026
+Q. The project description PDF says that the method 
+	void show_list(ROOT *M, FILE *F) 
+   should print out the non-zero entries and their position. However, in your 
+   	provided output sample files, t1.out and t2.txt to t5.txt, it only prints 
+   	out the non-zero entries, not their positions.
+A. This has been corrected. Now the positions are added and the corresponding 
+	files are updated. 
